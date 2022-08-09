@@ -1,0 +1,3 @@
+Написать с помощью boost/math/tools/polynomial.hpp программу с функционалом polynom_example.exe.
+// https://www.boost.org/doc/libs/1_61_0/libs/math/example/polynomial_arithmetic.cpp
+// в polynoms.txt записаны a,b,d многочлены

@@ -1,0 +1,41 @@
+C++:
+Boost
+SFML
+OpenCV
+Qt
+Xlnt
+Zlib / Zstd / Lzma / bzip2
+Eigen
+Crypto++ / Bcrypt / ...
+Xpdf / Podofo / ...
+Aquila / ...
+Tinyxml2 / ...
+VK api + any JSON + libcurl
+VTK / ...
+Timsort
+Google test / Boost test / ...
+Infoware + ...
+
+Python:
+OpenCV-Python
+PyQt
+Simpleaudio
+Sage
+Tkinter
+Turtle
+Pygame
+Vpython
+Vosk
+Django
+Flask
+FastApi
+Moviepy
+Kivy
+Pyttsx3
+Pyautogui
+Mechanize
+Requests
+Numpy, pandas
+Matplotlib
+Scipy.Stats
+Manim

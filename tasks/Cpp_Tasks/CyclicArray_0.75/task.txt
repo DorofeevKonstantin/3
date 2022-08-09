@@ -1,0 +1,17 @@
+Реализовать два вида циклического массива:
+1) Фиксированной длины:
+	cyclicStaticArray<10,int> ca;
+	ca.print();
+	int index = -1;
+	std::cout << "ca[" << index << "]==" << ca[index] << std::endl;
+	index = -22;
+	std::cout << "ca[" << index << "]==" << ca[index] << std::endl;
+2) Переменной длины:
+	cyclicArray<int> ca;
+	for (int i = 0; i < 5; i++)
+		ca.add(i);
+	ca.print();
+	int index = -1;
+	std::cout << "ca[" << index << "]==" << ca[index] << std::endl;
+	index = -22;
+	std::cout << "ca[" << index << "]==" << ca[index] << std::endl;

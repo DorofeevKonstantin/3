@@ -1,0 +1,9 @@
+Реализовать гетерогенное хранилище данных (хранение разнородных данных).
+
+Например:
+HeterogeneousList hl;
+//...
+hl.add(1);
+hl.add("Hello world!");
+hl.add(Complex(1,2));
+hl.add(std::vector<int>{1,2,3});

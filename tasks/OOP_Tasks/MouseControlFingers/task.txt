@@ -1,0 +1,6 @@
+Реализовать программу по интерактивному управлению мышью с помощью жестов пальцев.
+1 вариант - фронтальное управление.
+2 вариант - проецирование позиции с белого листа А4 на экран.
+
+https://google.github.io/mediapipe/solutions/hands.html
+https://learnopencv.com/hand-keypoint-detection-using-deep-learning-and-opencv/
