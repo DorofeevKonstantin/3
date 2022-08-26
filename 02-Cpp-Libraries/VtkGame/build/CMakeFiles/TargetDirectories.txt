@@ -1,0 +1,3 @@
+C:/MAIN/repositories/github/csu/3/02-Cpp-Libraries/VtkGame/build/CMakeFiles/VtkGame.dir
+C:/MAIN/repositories/github/csu/3/02-Cpp-Libraries/VtkGame/build/CMakeFiles/ALL_BUILD.dir
+C:/MAIN/repositories/github/csu/3/02-Cpp-Libraries/VtkGame/build/CMakeFiles/ZERO_CHECK.dir

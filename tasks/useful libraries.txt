@@ -3,6 +3,7 @@ Boost
 SFML
 OpenCV
 Qt
+Drogon
 Xlnt
 Zlib / Zstd / Lzma / bzip2
 Eigen

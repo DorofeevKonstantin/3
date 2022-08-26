@@ -1,0 +1,3 @@
+C:/MAIN/repositories/github/csu/3/02-Cpp-Libraries/VtxExample/build/CMakeFiles/VtxExample.dir
+C:/MAIN/repositories/github/csu/3/02-Cpp-Libraries/VtxExample/build/CMakeFiles/ALL_BUILD.dir
+C:/MAIN/repositories/github/csu/3/02-Cpp-Libraries/VtxExample/build/CMakeFiles/ZERO_CHECK.dir

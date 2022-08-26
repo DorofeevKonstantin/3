@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\MAIN\repositories\github\csu\3\02-Cpp-Libraries\VtkGame\build\CMakeFiles\7bbc25ff392ae615a1c31206e5953522\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{F77F5917-B076-33CA-B39F-3B6BE5C49748}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
