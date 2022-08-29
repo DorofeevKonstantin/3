@@ -9,13 +9,11 @@ class BoardView
 {
 	Board& board;
 	Players current_player;
-
 public:
 	BoardView(Board& _board) : board(_board)
 	{
 		current_player = Players::KRESTIK;
 	}
-
 	void run()
 	{
 		while (board.get_status_game() == WIN_TYPE::NONE)
@@ -27,7 +25,6 @@ public:
 				+ 1) % static_cast<int>(Players::_COUNT));
 		}
 	}
-
 	void input_move()
 	{
 		int x, y;
@@ -42,7 +39,6 @@ public:
 				cell_value = CELL_TYPE::NOLIK;
 		} while (board.set_cell(y, x, cell_value) == false);
 	}
-
 	void draw()
 	{
 		size_t size = board.get_size();
@@ -63,6 +59,7 @@ public:
 					cell = 'O';
 					break;
 				default:
+					cell = '?';
 					break;
 				}
 				std::cout << cell;

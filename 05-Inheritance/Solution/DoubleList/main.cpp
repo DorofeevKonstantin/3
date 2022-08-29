@@ -7,7 +7,6 @@ class List
 protected:
 	int value;
 	List* next;
-
 public:
 	List(int value_)
 	{
@@ -41,7 +40,6 @@ class DoubleList : public List
 private:
 	DoubleList* prev;
 	DoubleList* tail;
-
 public:
 	DoubleList(int value_) : List(value_), tail(0), prev(0)
 	{
@@ -77,6 +75,7 @@ void addSequence(List* l, int value_, size_t count)
 		l->addValue(value_);
 	}
 }
+
 int main()
 {
 	List l(0);

@@ -25,10 +25,9 @@ public:
 	safearray(safearray&& obj) noexcept
 	{
 		size = obj.size;
-		data = new int[size];
-		std::memcpy((void*)data, (void*)obj.data, size * sizeof(int));
-		obj.data = nullptr;
+		data = obj.data;		
 		obj.size = 0;
+		obj.data = nullptr;
 	}
 	safearray& operator=(safearray& obj) noexcept
 	{
@@ -42,10 +41,9 @@ public:
 	{
 		delete[] data;
 		size = obj.size;
-		data = new int[size];
-		std::memcpy((void*)data, (void*)obj.data, size * sizeof(int));
-		obj.data = nullptr;
+		data = obj.data;
 		obj.size = 0;
+		obj.data = nullptr;		
 		return *this;
 	}
 	~safearray()
