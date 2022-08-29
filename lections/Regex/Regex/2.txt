@@ -1,0 +1,2 @@
+facebookpassword qwerty
+vk_passwd 123456
