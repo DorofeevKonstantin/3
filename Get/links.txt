@@ -1,12 +1,6 @@
 Репозиторий:
 https://github.com/DorofeevKonstantin/3
 
-Успеваемость:
-https://drive.google.com/drive/folders/1J4jWotCkI808FhXarW6SLfbVy5JBAFu0?usp=sharing
-
-Вопросы на экзамен:
-https://docs.google.com/document/d/1yvsXCYHcuxD4GnRzg7QyvvZ8rq90pIiDbQeAXA-4k2U/edit?usp=sharing
-
 Материалы по С++:
 книги:
 Шилдт - С++ Базовый курс

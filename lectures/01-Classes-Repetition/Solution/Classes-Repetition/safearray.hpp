@@ -11,7 +11,7 @@ private:
 	size_t size;
 	int* data;
 public:
-	safearray(size_t _size = 0) :size(_size), data(nullptr)
+	safearray(size_t _size = 0) : size(_size), data(nullptr)
 	{
 		if (size > 0)
 			data = new int[size];
@@ -29,7 +29,7 @@ public:
 		obj.size = 0;
 		obj.data = nullptr;
 	}
-	safearray& operator=(safearray& obj) noexcept
+	safearray& operator=(const safearray& obj) noexcept
 	{
 		delete[] data;
 		size = obj.size;
