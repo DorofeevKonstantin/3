@@ -4,7 +4,7 @@ SFML
 OpenCV
 Qt
 Drogon
-Xlnt
+Xlnt / ...
 Zlib / Zstd / Lzma / bzip2
 Eigen
 Crypto++ / Bcrypt / ...
