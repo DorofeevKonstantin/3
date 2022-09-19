@@ -1,7 +1,7 @@
 #pragma once
 
-const int LEN = 32;		// Максимальная длина фамилий
-const int MAXEM = 100;	// Максимальное число работников
+const int LEN = 32;		// РњР°РєСЃРёРјР°Р»СЊРЅР°СЏ РґР»РёРЅР° С„Р°РјРёР»РёР№
+const int MAXEM = 100;	// РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ С‡РёСЃР»Рѕ СЂР°Р±РѕС‚РЅРёРєРѕРІ
 enum Employee_type { tmanager, tscientist, tlaborer };
 
 ///////////////////////////////////////////////////////////
@@ -15,18 +15,18 @@ private:
 public:
 	virtual void getData();
 	virtual void putData();
-	virtual Employee_type getType();	// получить тип
-	static void add();					// добавить работника
-	static void display();				// вывести данные обо всех
-	static void read();					// чтение из файла
-	static void write();				// запись в файл
+	virtual Employee_type getType();	// РїРѕР»СѓС‡РёС‚СЊ С‚РёРї
+	static void add();					// РґРѕР±Р°РІРёС‚СЊ СЂР°Р±РѕС‚РЅРёРєР°
+	static void display();				// РІС‹РІРµСЃС‚Рё РґР°РЅРЅС‹Рµ РѕР±Рѕ РІСЃРµС…
+	static void read();					// С‡С‚РµРЅРёРµ РёР· С„Р°Р№Р»Р°
+	static void write();				// Р·Р°РїРёСЃСЊ РІ С„Р°Р№Р»
 };
 ///////////////////////////////////////////////////////////
 class Manager : public Employee
 {
 private:
-	char title_[LEN];		// титул ("вице-президент" и т. п.)
-	double payment_;		// Налоги гольф-клуба
+	char title_[LEN];		// С‚РёС‚СѓР» ("РІРёС†Рµ-РїСЂРµР·РёРґРµРЅС‚" Рё С‚. Рї.)
+	double payment_;		// РќР°Р»РѕРіРё РіРѕР»СЊС„-РєР»СѓР±Р°
 public:
 	void getData();
 	void putData();
