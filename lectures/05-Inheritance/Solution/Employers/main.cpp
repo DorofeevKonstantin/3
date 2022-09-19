@@ -4,89 +4,87 @@
 #include <random>
 #include <string>
 
-class Employee
+class worker
 {
 protected:
-	int base_salary = 1000;
+	int baseSalary = 10'000;
 	std::string name;
 	std::random_device rd{};
 	std::mt19937 engine{ rd() };
 	std::uniform_real_distribution<double> dist{ 0.0, 100.0 };
 public:
-	virtual int calculate_salary() = 0;
+	virtual int calculateSalary() = 0;
 };
-class Developer : public Employee
+class developer : public worker
 {
-	int extra_hours;
-	int hour_payment;
-	int* some;
+	int hours;
+	int hourPayment;
 public:
-	int calculate_salary() override
+	int calculateSalary() override
 	{
-		return base_salary + extra_hours * hour_payment;
+		return baseSalary + hours * hourPayment;
 	}
-	Developer()
+	developer()
 	{
-		extra_hours = static_cast<int>(dist(engine));
-		hour_payment = static_cast<int>(dist(engine));
-		some = new int[10000000];
+		hours = static_cast<int>(dist(engine));
+		hourPayment = static_cast<int>(dist(engine));
 	}
-	~Developer()
+	~developer()
 	{
-		delete[] some;
+
 	}
 };
-class Saler : public Employee
+class saler : public worker
 {
-	int count_deals;
-	int deal_payment;
+	int countDeals;
+	int dealPayment;
 public:
-	int calculate_salary() override
+	int calculateSalary() override
 	{
-		return base_salary + count_deals * deal_payment;
+		return baseSalary + countDeals * dealPayment;
 	}
-	Saler()
+	saler()
 	{
-		count_deals = static_cast<int>(dist(engine));
-		deal_payment = static_cast<int>(dist(engine));
+		countDeals = static_cast<int>(dist(engine));
+		dealPayment = static_cast<int>(dist(engine));
 	}
 };
-class Database
+class database
 {
-	std::vector<Employee*> workers;
+	std::vector<worker*> workers;
 public:
-	Database(int size = 100)
+	database(int size = 100)
 	{
 		workers.reserve(size);
 	}
-	Database& add(Employee* new_employee)
+	database& add(worker* new_employee)
 	{
 		workers.push_back(new_employee);
 		return *this;
 	}
-	void add(std::initializer_list<Employee*> l)
+	void add(std::initializer_list<worker*> l)
 	{
-		for (auto& worker : l)
-			workers.push_back(worker);
+		for (auto w : l)
+			workers.push_back(w);
 	}
-	int calculate_all_salary()
+	int calculateAllSalary()
 	{
 		int summ = 0;
-		/*for (Employee* current : workers)
-			summ += current->calculate_salary();*/
-		for (auto it = workers.begin(); it != workers.end(); ++it)
-			summ += (*it)->calculate_salary();
+		for (auto current : workers)
+			summ += current->calculateSalary();
+		//for (auto it = workers.begin(); it != workers.end(); ++it)
+		//	summ += (*it)->calculateSalary();
 		return summ;
 	}
 };
 
 int main()
 {
-	Database db;
-	Developer d1, d2;
-	Saler s1, s2;
-	//db.add(&d1).add(&d2).add(&s1).add(&s2);
-	db.add({&d1,&d2,&s1,&s2});
-	std::cout << db.calculate_all_salary();
+	database db;
+	developer *d1 = new developer, *d2 = new developer;
+	saler *s1 = new saler, *s2 = new saler;
+	//db.add(d1).add(d2).add(s1).add(s2);
+	db.add({ d1,d2,s1,s2 });
+	std::cout << db.calculateAllSalary();
 	return 0;
 }

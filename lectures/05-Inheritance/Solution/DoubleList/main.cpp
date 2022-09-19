@@ -2,89 +2,88 @@
 
 using namespace std;
 
-class List
+namespace KB
 {
-protected:
-	int value;
-	List* next;
-public:
-	List(int value_)
+	class list
 	{
-		value = value_;
-		next = 0;
-	}
-	virtual void addValue(int value_)
-	{
-		List* current = this;
-		while (current->next != 0)
+	protected:
+		int value;
+		list* next;
+	public:
+		list(int value_)
 		{
-			current = current->next;
+			value = value_;
+			next = 0;
 		}
-		current->next = new List(value_);
-	}
-	void output()
-	{
-		List* current = this;
-		while (current != 0)
+		virtual void pushBack(int value_)
 		{
-			if (current->next != 0) cout << current->value << " -> ";
-			else cout << current->value;
-			current = current->next;
+			list* current = this;
+			while (current->next != 0)
+				current = current->next;
+			current->next = new list(value_);
 		}
-		cout << endl;
-	}
-};
+		void print()
+		{
+			list* current = this;
+			while (current != 0)
+			{
+				if (current->next != 0) cout << current->value << " -> ";
+				else cout << current->value;
+				current = current->next;
+			}
+			cout << endl;
+		}
+	};
 
-class DoubleList : public List
-{
-private:
-	DoubleList* prev;
-	DoubleList* tail;
-public:
-	DoubleList(int value_) : List(value_), tail(0), prev(0)
+	class doubleList : public list
 	{
+	private:
+		doubleList* prev;
+		doubleList* tail;
+	public:
+		doubleList(int value_) : list(value_), tail(0), prev(0)
+		{
 
-	}
-	void addValue(int value_) override
-	{
-		DoubleList* current = this;
-		while (current->next != 0)
-		{
-			current = static_cast<DoubleList*>(current->next);
 		}
-		current->next = new DoubleList(value_);
-		(static_cast<DoubleList*>(current->next))->prev = current;
-		tail = static_cast<DoubleList*>(current->next);
-	}
-	void reverseOutput()
-	{
-		DoubleList* current = tail;
-		while (current != 0)
+		void pushBack(int value_) override
 		{
-			if (current->prev != 0) cout << current->value << " -> ";
-			else cout << current->value;
-			current = current->prev;
+			doubleList* current = this;
+			while (current->next != 0)
+				current = static_cast<doubleList*>(current->next);
+			current->next = new doubleList(value_);
+			(static_cast<doubleList*>(current->next))->prev = current;
+			tail = static_cast<doubleList*>(current->next);
 		}
-		cout << endl;
-	}
-};
-void addSequence(List* l, int value_, size_t count)
-{
-	for (size_t i = 0; i < count; ++i)
+		void reversePrint()
+		{
+			doubleList* current = tail;
+			while (current != 0)
+			{
+				if (current->prev != 0) cout << current->value << " -> ";
+				else cout << current->value;
+				current = current->prev;
+			}
+			cout << endl;
+		}
+	};
+	void addSequence(list* l, size_t count, int value)
 	{
-		l->addValue(value_);
+		for (size_t i = 0; i < count; ++i)
+			l->pushBack(value);
 	}
 }
 
 int main()
 {
-	List l(0);
-	DoubleList l2(0);
-	addSequence(&l, 9, 10);
-	addSequence(&l2, 9, 10);
-	l.output();
-	l2.output();
+	KB::list l(0);
+	l.pushBack(1);
+	KB::doubleList l2(4);
+	l2.pushBack(5);
+	addSequence(&l, 3, 10);
+	addSequence(&l2, 3, 10);
+	l.print();
+	l2.print();
 	cout << "l2.reverseOutput()" << endl;
-	l2.reverseOutput();
+	l2.reversePrint();
 	return 0;
 }
