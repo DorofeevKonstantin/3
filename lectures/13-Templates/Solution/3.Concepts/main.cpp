@@ -9,7 +9,7 @@
 
 int main()
 {
-	stringableExample();
-	gcd_examples();
+	stringableTest();
+	gcdTest();
 	return 0;
 }

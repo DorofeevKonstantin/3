@@ -5,15 +5,15 @@
 
 // only declaration
 template <class T>
-struct Storage;
+struct storage;
 
-// full definiton for T==char
+// specialization for T==char
 template <>
-struct Storage<char>
+struct storage<char>
 {
 	int size;
 	std::string data;
-	Storage(int _size) : size(_size)
+	storage(int _size) : size(_size)
 	{
 		data.resize(size);
 	}
@@ -21,10 +21,9 @@ struct Storage<char>
 
 int main()
 {
-	Storage<int> di(10); // can't compile
-	Storage<double> dd(1); // can't compile
-
-	Storage<char> dc(100);
+	//storage<int> di(10); // can't compile
+	//storage<double> dd(1); // can't compile
+	storage<char> dc(100);
 	dc.data[5] = 'A';
 	return 0;
 }

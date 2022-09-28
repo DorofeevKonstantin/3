@@ -13,13 +13,13 @@ Employee** Employee::arrayPointers_ = new Employee * [MAXEM];
 void Employee::getData()
 {
 	cin.ignore(10, '\n');
-	cout << "  Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÑŽ: "; cin >> name_;
-	cout << "  Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€: ";    cin >> number_;
+	cout << "  Ââåäèòå ôàìèëèþ: "; cin >> name_;
+	cout << "  Ââåäèòå íîìåð: ";    cin >> number_;
 }
 void Employee::putData()
 {
-	cout << "\n  Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ñ: " << name_;
-	cout << "\n  ÐÐ¾Ð¼ÐµÑ€: " << number_;
+	cout << "\n  Ôàìèëèÿ: " << name_;
+	cout << "\n  Íîìåð: " << number_;
 }
 Employee_type Employee::getType()
 {
@@ -31,24 +31,24 @@ Employee_type Employee::getType()
 		return tlaborer;
 	else
 	{
-		cerr << "\nÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ñ€Ð°Ð±Ð¾Ñ‚Ð½Ð¸ÐºÐ°";
+		cerr << "\nÍåïðàâèëüíûé òèï ðàáîòíèêà";
 	}
 	return tmanager;
 }
 void Employee::add()
 {
 	char choise;
-	cout << "'m' Ð´Ð»Ñ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ñ Ð¼ÐµÐ½ÐµÐ´Ð¶ÐµÑ€Ð°"
-		"\n's' Ð´Ð»Ñ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ñ ÑƒÑ‡ÐµÐ½Ð¾Ð³Ð¾"
-		"\n'l' Ð´Ð»Ñ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ñ Ñ€Ð°Ð±Ð¾Ñ‡ÐµÐ³Ð¾"
-		"\nÐ’Ð°Ñˆ Ð²Ñ‹Ð±Ð¾Ñ€: ";
+	cout << "'m' äëÿ äîáàâëåíèÿ ìåíåäæåðà"
+		"\n's' äëÿ äîáàâëåíèÿ ó÷åíîãî"
+		"\n'l' äëÿ äîáàâëåíèÿ ðàáî÷åãî"
+		"\nÂàø âûáîð: ";
 	cin >> choise;
 	switch (choise)
 	{
 	case 'm': arrayPointers_[count_] = new Manager;  break;
 	case 's': arrayPointers_[count_] = new Scientist; break;
 	case 'l': arrayPointers_[count_] = new Laborer;  break;
-	default: cout << "\nÐÐµÐ¸Ð·Ð²ÐµÑÑ‚Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ñ€Ð°Ð±Ð¾Ñ‚Ð½Ð¸ÐºÐ°\n"; return;
+	default: cout << "\nÍåèçâåñòíûé òèï ðàáîòíèêà\n"; return;
 	}
 	arrayPointers_[count_++]->getData();
 }
@@ -59,10 +59,10 @@ void Employee::display()
 		cout << (j + 1);
 		switch (arrayPointers_[j]->getType())
 		{
-		case tmanager:  cout << ". Ð¢Ð¸Ð¿: ÐœÐµÐ½ÐµÐ´Ð¶ÐµÑ€";  break;
-		case tscientist: cout << ". Ð¢Ð¸Ð¿: Ð£Ñ‡ÐµÐ½Ñ‹Ð¹"; break;
-		case tlaborer:   cout << ". Ð¢Ð¸Ð¿: Ð Ð°Ð±Ð¾Ñ‡Ð¸Ð¹";  break;
-		default: cout << ". ÐÐµÐ¸Ð·Ð²ÐµÑÑ‚Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿";
+		case tmanager:  cout << ". Òèï: Ìåíåäæåð";  break;
+		case tscientist: cout << ". Òèï: Ó÷åíûé"; break;
+		case tlaborer:   cout << ". Òèï: Ðàáî÷èé";  break;
+		default: cout << ". Íåèçâåñòíûé òèï";
 		}
 		arrayPointers_[j]->putData();
 		cout << endl;
@@ -80,7 +80,7 @@ void Employee::read()
 	inputFile.open("EMPLOY.DAT", ios::binary);
 	if (!inputFile)
 	{
-		cout << "\nÐÐµÐ²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ñ„Ð°Ð¹Ð»\n";
+		cout << "\nÍåâîçìîæíî îòêðûòü ôàéë\n";
 		return;
 	}
 	count_ = 0;
@@ -91,7 +91,7 @@ void Employee::read()
 			break;
 		if (!inputFile)
 		{
-			cout << "\nÐÐµÐ²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ Ñ‡Ñ‚ÐµÐ½Ð¸Ðµ Ñ‚Ð¸Ð¿Ð°\n"; return;
+			cout << "\nÍåâîçìîæíî ÷òåíèå òèïà\n"; return;
 		}
 		switch (inputType)
 		{
@@ -107,28 +107,28 @@ void Employee::read()
 			arrayPointers_[count_] = new Laborer;
 			size = sizeof(Laborer);
 			break;
-		default: cout << "\nÐÐµÐ¸Ð·Ð²ÐµÑÑ‚Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ð² Ñ„Ð°Ð¹Ð»Ðµ\n"; return;
+		default: cout << "\nÍåèçâåñòíûé òèï â ôàéëå\n"; return;
 		}
 		inputFile.read((char*)arrayPointers_[count_], size);
 		if (!inputFile)
 		{
-			cout << "\nÐ§Ñ‚ÐµÐ½Ð¸Ðµ Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð° Ð½ÐµÐ²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾\n"; return;
+			cout << "\n×òåíèå äàííûõ èç ôàéëà íåâîçìîæíî\n"; return;
 		}
 		count_++;
 	}
-	cout << "Ð˜Ð´ÐµÑ‚ Ñ‡Ñ‚ÐµÐ½Ð¸Ðµ " << count_ << " Ñ€Ð°Ð±Ð¾Ñ‚Ð½Ð¸ÐºÐ¾Ð²\n";
+	cout << "Èäåò ÷òåíèå " << count_ << " ðàáîòíèêîâ\n";
 	inputFile.close();
 }
 void Employee::write()
 {
 	int size;
-	cout << "Ð˜Ð´ÐµÑ‚ Ð·Ð°Ð¿Ð¸ÑÑŒ " << count_ << " Ñ€Ð°Ð±Ð¾Ñ‚Ð½Ð¸ÐºÐ¾Ð².\n";
+	cout << "Èäåò çàïèñü " << count_ << " ðàáîòíèêîâ.\n";
 	ofstream outputFile;
 	Employee_type inputType;
 	outputFile.open("EMPLOY.DAT", ios::trunc | ios::binary);
 	if (!outputFile)
 	{
-		cout << "\nÐÐµÐ²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ñ„Ð°Ð¹Ð»\n"; return;
+		cout << "\nÍåâîçìîæíî îòêðûòü ôàéë\n"; return;
 	}
 	for (int j = 0; j < count_; j++)
 	{
@@ -143,7 +143,7 @@ void Employee::write()
 		outputFile.write((char*)(arrayPointers_[j]), size);
 		if (!outputFile)
 		{
-			cout << "\nÐ—Ð°Ð¿Ð¸ÑÑŒ Ð² Ñ„Ð°Ð¹Ð» Ð½ÐµÐ²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð°\n"; return;
+			cout << "\nÇàïèñü â ôàéë íåâîçìîæíà\n"; return;
 		}
 	}
 	outputFile.close();
@@ -152,24 +152,24 @@ void Employee::write()
 void Manager::getData()
 {
 	Employee::getData();
-	cout << "  Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‚Ð¸Ñ‚ÑƒÐ»: ";	cin >> title_;
-	cout << "  Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ð»Ð¾Ð³Ð¸: ";	cin >> payment_;
+	cout << "  Ââåäèòå òèòóë: ";	cin >> title_;
+	cout << "  Ââåäèòå íàëîãè: ";	cin >> payment_;
 }
 void Manager::putData()
 {
 	Employee::putData();
-	cout << "\n  Ð¢Ð¸Ñ‚ÑƒÐ»: " << title_;
-	cout << "\n  ÐÐ°Ð»Ð¾Ð³Ð¸ Ð³Ð¾Ð»ÑŒÑ„-ÐºÐ»ÑƒÐ±Ð°: " << payment_;
+	cout << "\n  Òèòóë: " << title_;
+	cout << "\n  Íàëîãè ãîëüô-êëóáà: " << payment_;
 }
 ///////////////////////////////////////////////////////////
 void Scientist::getData()
 {
 	Employee::getData();
-	cout << "  Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð¿ÑƒÐ±Ð»Ð¸ÐºÐ°Ñ†Ð¸Ð¹: "; cin >> nPublications_;
+	cout << "  Ââåäèòå ÷èñëî ïóáëèêàöèé: "; cin >> nPublications_;
 }
 void Scientist::putData()
 {
 	Employee::putData();
-	cout << "\n  Ð§Ð¸ÑÐ»Ð¾ Ð¿ÑƒÐ±Ð»Ð¸ÐºÐ°Ñ†Ð¸Ð¹: " << nPublications_;
+	cout << "\n  ×èñëî ïóáëèêàöèé: " << nPublications_;
 }
 ///////////////////////////////////////////////////////////

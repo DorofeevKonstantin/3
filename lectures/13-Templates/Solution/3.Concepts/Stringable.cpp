@@ -1,7 +1,7 @@
 #include "Stringable.hpp"
 
-void stringableExample()
+void stringableTest()
 {
 	output<const char*>("Hello world!");
-	output<Person>(Person("Ivan"));
+	output<person>(person("Ivan"));
 }

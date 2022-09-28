@@ -3,7 +3,7 @@
 #include <vector>
 #include <algorithm>
 
-class BadIndex : public std::exception
+class badIndex : public std::exception
 {
 public:
 	const char* what() const
@@ -13,19 +13,19 @@ public:
 };
 
 template <class T>
-class SafeArray
+class safeArray
 {
 private:
 	unsigned int size;
 	T* data;
 public:
-	SafeArray() :size(0)
+	safeArray() :size(0)
 	{
 		data = nullptr;
 	}
-	SafeArray(unsigned int size_);
+	safeArray(unsigned int size_);
 
-	SafeArray(const SafeArray& object)
+	safeArray(const safeArray& object)
 	{
 		size = object.size;
 		data = new T[size];
@@ -38,7 +38,7 @@ public:
 			return data[index];
 		else
 		{
-			throw BadIndex();
+			throw badIndex();
 		}
 	}
 	T& operator[](unsigned int index)
@@ -47,10 +47,10 @@ public:
 			return data[index];
 		else
 		{
-			throw BadIndex();
+			throw badIndex();
 		}
 	}
-	SafeArray& operator= (const SafeArray& object)
+	safeArray& operator= (const safeArray& object)
 	{
 		if (this == &object) return *this;
 		size = object.size;
@@ -68,7 +68,7 @@ public:
 
 // definition of method outside of class declaration
 template <class T>
-void SafeArray<T>::output()
+void safeArray<T>::output()
 {
 	for (unsigned int i = 0; i < size; i++)
 		std::cout << data[i] << " ";
@@ -77,7 +77,7 @@ void SafeArray<T>::output()
 
 // definition of method outside of class declaration
 template <class T>
-SafeArray<T>::SafeArray(unsigned int _size)
+safeArray<T>::safeArray(unsigned int _size)
 {
 	size = _size;
 	data = new T[size];
@@ -107,7 +107,7 @@ std::ostream& operator<< <>(std::ostream& os, const mypair<T, V>& obj)
 }
 
 template <class T, class V>
-class DataBase
+class dataBase
 {
 private:
 	std::vector<mypair<T, V>> students;
@@ -132,34 +132,34 @@ public:
 	}
 };
 
-// definition of static field of class DataBase
+// definition of static field of class dataBase
 template <class T, class V>
-mypair<T, V> DataBase<T, V>::best_student{ T(), V() };
+mypair<T, V> dataBase<T, V>::best_student{ T(), V() };
 
 int main()
 {
-	DataBase<std::string, int> db;
+	dataBase<std::string, int> db;
 	db.add({ "Ivanov", 2 });
 	db.add({ "Petrov", 33 });
-	auto best_student1 = DataBase<std::string, int>::get_best_student();
+	auto best_student1 = dataBase<std::string, int>::get_best_student();
 	std::cout << best_student1;
 	// analog : call for global function "operator<<"
 	operator<< <std::string, int>(std::cout, best_student1);
 
-	DataBase<std::string, std::string> db2;
+	dataBase<std::string, std::string> db2;
 	db2.add({ "Ivanov", "2" });
 	db2.add({ "Petrov", "1" });
-	auto best_student2 = DataBase<std::string, std::string>::get_best_student();
+	auto best_student2 = dataBase<std::string, std::string>::get_best_student();
 	std::cout << best_student2;
 
-	DataBase<std::string, int> db3;
+	dataBase<std::string, int> db3;
 	db3.add({ "Abc", 2 });
 	db3.add({ "Komarov", 44 });
 
-	auto best_student3 = DataBase<std::string, int>::get_best_student();
+	auto best_student3 = dataBase<std::string, int>::get_best_student();
 	std::cout << best_student3;
 
-	best_student2 = DataBase<std::string, std::string>::get_best_student();
+	best_student2 = dataBase<std::string, std::string>::get_best_student();
 	std::cout << best_student2;
 	return 0;
 }

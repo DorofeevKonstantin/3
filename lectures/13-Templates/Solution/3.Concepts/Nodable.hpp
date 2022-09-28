@@ -69,31 +69,31 @@ public:
 };
 
 template<class T>
-concept Boolable = requires(T obj)
+concept boolable = requires(T obj)
 {
 	{ obj }  -> std::convertible_to<bool>;
 };
 
 template<class T>
-concept Divisible = requires(T dividend, T divisor)
+concept divisible = requires(T dividend, T divisor)
 {
-	dividend% divisor;
+	dividend % divisor;
 };
 
 template<class T>
-concept Lessable = requires(T lhs, T rhs)
+concept lessable = requires(T lhs, T rhs)
 {
 	lhs < rhs;
 };
 
 template<class T>
-concept Swappable = requires(T lhs, T rhs)
+concept swappable = requires(T lhs, T rhs)
 {
 	std::swap<T>(lhs, rhs);
 };
 
 template <class T>
-T gcd(T a, T b) requires Boolable<T>&& Divisible<T>&& Lessable<T>&& Swappable<T>
+T gcd(T a, T b) requires boolable<T>&& divisible<T>&& lessable<T>&& swappable<T>
 {
 	if (a < b)
 		std::swap(a, b);
@@ -106,4 +106,4 @@ void output_gcd(T& left, T& right)
 	std::cout << "gcd(" << left << "," << right << ") == " << gcd<T>(left, right) << std::endl;
 }
 
-void gcd_examples();
+void gcdTest();

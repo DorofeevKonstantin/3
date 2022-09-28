@@ -1,6 +1,6 @@
 #include "Nodable.hpp"
 
-void gcd_examples()
+void gcdTest()
 {
 	int left = 320, right = 128;
 	output_gcd<int>(left, right);

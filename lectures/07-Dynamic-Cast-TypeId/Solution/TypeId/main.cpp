@@ -8,6 +8,8 @@ struct Derived : Base {};
 struct Base2 { virtual void foo() {} }; // polymorphic
 struct Derived2 : Base2 {};
 
+// https://en.cppreference.com/w/cpp/language/value_category
+
 int main()
 {
 	int myint = 50;
@@ -35,7 +37,8 @@ int main()
 	Base2& b2 = d2;
 	std::cout << "reference to polymorphic base: " << typeid(b2).name() << '\n';
 
-	try {
+	try
+	{
 		// dereferencing a null pointer: okay for a non-polymorphic expression
 		std::cout << "mydoubleptr points to " << typeid(*mydoubleptr).name() << '\n';
 		// dereferencing a null pointer: not okay for a polymorphic lvalue

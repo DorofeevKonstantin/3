@@ -1,8 +1,8 @@
 #pragma once
 #ifndef _WORKERS_H
 #define _WORKERS_H
-const int LEN=32;		// Максимальная длина фамилий
-const int MAXEM=100;	// Максимальное число работников
+const int LEN=32;
+const int MAXEM=100;
 enum Employee_type { tmanager, tscientist, tlaborer };
 ///////////////////////////////////////////////////////////
 class Employee
@@ -15,18 +15,18 @@ private:
 public:
 	virtual void getData();
 	virtual void putData();
-	virtual Employee_type getType();	// получить тип
-	static void add();					// добавить работника
-	static void display();				// вывести данные обо всех
-	static void read();					// чтение из файла
-	static void write();				// запись в файл
+	virtual Employee_type getType();
+	static void add();					// add worker
+	static void display();
+	static void read();					// from file
+	static void write();				// to file
 };
 ///////////////////////////////////////////////////////////
 class Manager : public Employee
 {
 private:
-	char title_[LEN];		// титул ("вице-президент" и т. п.)
-	double payment_;		// Налоги гольф-клуба
+	char title_[LEN];		// "president" for example
+	double payment_;		// 250 for example
 public:
 	void getData();
 	void putData();
