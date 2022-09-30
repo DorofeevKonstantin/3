@@ -252,19 +252,12 @@ namespace My3Controls
 		currentSize *= length;
 		for (int i = 0; i < currentSize; ++i)
 		{
-			bitmap->SetPixel(i, i, *color);
+			//bitmap->SetPixel(i, i, *color);
 		}
 		this->pictureBox1->Image = bitmap;
-
-		Pen^ pen = gcnew Pen(Color::AntiqueWhite);
+		Pen^ pen = gcnew Pen(Color::Red);
 		int size = 10;
-		array<Point>^ points = gcnew array<Point>(size);
-		//std::mt19937 
-		for (int i = 0; i < 10; ++i)
-		{
-
-		}
-		//array<Point>^ points = gcnew array<Point>{ Point(1,1), Point(50,1), Point(50, 50) };
+		array<Point>^ points = gcnew array<Point>{ Point(1,1), Point(50,1), Point(50, 50) };
 		graphics->DrawPolygon(pen, points);
 	}
 	private: System::Void checkedListBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e)

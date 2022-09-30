@@ -41,13 +41,6 @@ public:
 
 int main()
 {
-	{
-		Person p1("Ivan", 24);
-		p1.output();
-		Manager m1("Petr", 33, 2);
-		m1.output();
-	}
-
 	Person* p = new Person("Mihail", 25);
 	p->output();
 	Manager* m = dynamic_cast<Manager*>(p);

@@ -35,6 +35,9 @@ namespace My2FromDesigner {
 			}
 		}
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::RichTextBox^ richTextBox1;
+		   size_t count = 0;
+
 	protected:
 
 	private:
@@ -51,6 +54,7 @@ namespace My2FromDesigner {
 		void InitializeComponent(void)
 		{
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -63,11 +67,21 @@ namespace My2FromDesigner {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
+			// richTextBox1
+			// 
+			this->richTextBox1->Location = System::Drawing::Point(117, 49);
+			this->richTextBox1->Name = L"richTextBox1";
+			this->richTextBox1->Size = System::Drawing::Size(455, 389);
+			this->richTextBox1->TabIndex = 3;
+			this->richTextBox1->Text = L"";
+			this->richTextBox1->Click += gcnew System::EventHandler(this, &MyForm::richTextBox1_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1000, 570);
+			this->Controls->Add(this->richTextBox1);
 			this->Controls->Add(this->button1);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
@@ -82,7 +96,12 @@ namespace My2FromDesigner {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-
+		++count;
+		this->richTextBox1->Text = Convert::ToString(count);
+	}
+	private: System::Void richTextBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->richTextBox1->Text = "";
+		count = 0;
 	}
 	};
 }
