@@ -4,7 +4,7 @@
 <context>
     <name>QPushButton</name>
     <message>
-        <location filename="main.cpp" line="11"/>
+        <location filename="main.cpp" line="17"/>
         <source>Hello world!</source>
         <translation>Привет, мир!</translation>
     </message>
