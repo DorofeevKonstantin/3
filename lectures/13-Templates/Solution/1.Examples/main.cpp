@@ -6,7 +6,7 @@
 class badIndex : public std::exception
 {
 public:
-	const char* what() const
+	const char* what() const override
 	{
 		return "EXCEPTION BadIndex.";
 	}
@@ -84,10 +84,12 @@ safeArray<T>::safeArray(unsigned int _size)
 }
 
 // declaration of class
-template <typename T, typename V> struct mypair;
+template <typename T, typename V>
+struct mypair;
 
 // declaration of function
-template <typename T, typename V> std::ostream& operator<<(std::ostream& os, const mypair<T, V>& obj);
+template <typename T, typename V>
+std::ostream& operator<<(std::ostream& os, const mypair<T, V>& obj);
 
 // definition of class
 template <typename T, typename V>
@@ -121,6 +123,7 @@ public:
 	}
 	void output()
 	{
+		// algorithm STL
 		for_each(students.begin(), students.end(), [](auto& student)
 			{
 				std::cout << student.first << " " << student.second << std::endl;
@@ -154,7 +157,7 @@ int main()
 
 	dataBase<std::string, int> db3;
 	db3.add({ "Abc", 2 });
-	db3.add({ "Komarov", 44 });
+	db3.add({ "Komarov", 4 });
 
 	auto best_student3 = dataBase<std::string, int>::get_best_student();
 	std::cout << best_student3;
