@@ -1,11 +1,14 @@
 #include <tuple>
 #include <iostream>
 #include <string>
+#include <utility>
 #include <stdexcept>
 
 #include "tuple.hpp"
 
 using namespace std;
+
+std::pair<int, int> ints;
 
 tuple<double, char, string> get_student(int id)
 {
