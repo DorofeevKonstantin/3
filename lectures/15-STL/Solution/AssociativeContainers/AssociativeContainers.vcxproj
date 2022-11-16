@@ -24,6 +24,7 @@
     <ProjectGuid>{1bf873d4-3e18-4228-b540-efc7471e3669}</ProjectGuid>
     <RootNamespace>AssociativeContainers</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>6.AssociativeContainers</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

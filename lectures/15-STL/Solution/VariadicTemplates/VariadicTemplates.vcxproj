@@ -24,6 +24,7 @@
     <ProjectGuid>{91e5cb08-f848-4095-ae1c-f1d0ec9e689e}</ProjectGuid>
     <RootNamespace>VariadicTemplates</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>5.VariadicTemplates</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

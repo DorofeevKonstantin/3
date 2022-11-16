@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <type_traits>
 
 class badIndex : public std::exception
 {
@@ -138,6 +139,33 @@ public:
 // definition of static field of class dataBase
 template <class T, class V>
 mypair<T, V> dataBase<T, V>::best_student{ T(), V() };
+
+namespace KB
+{
+	template <class T>
+	struct is_pointer
+	{
+		static inline bool value = false;
+	};
+	template <class T>
+	struct is_pointer<T*>
+	{
+		static inline bool value = true;
+	};
+}
+
+void isPointerTests()
+{
+	std::cout << std::is_pointer<int>::value << std::endl;
+	std::cout << std::is_pointer<int*>::value << std::endl;
+	std::cout << std::is_pointer<char***>::value << std::endl;
+	std::cout << std::is_pointer<int[10]>::value << std::endl;
+
+	std::cout << KB::is_pointer<int>::value << std::endl;
+	std::cout << KB::is_pointer<int*>::value << std::endl;
+	std::cout << KB::is_pointer<char***>::value << std::endl;
+	std::cout << KB::is_pointer<int[10]>::value << std::endl;
+}
 
 int main()
 {

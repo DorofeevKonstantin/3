@@ -27,6 +27,7 @@
     <ProjectGuid>{426f5cb8-ae2c-4d3f-adcf-254f6f6a51fa}</ProjectGuid>
     <RootNamespace>Algorithms</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>8.Algorithms</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

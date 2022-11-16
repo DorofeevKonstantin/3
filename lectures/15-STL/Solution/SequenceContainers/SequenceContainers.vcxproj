@@ -24,6 +24,7 @@
     <ProjectGuid>{5536ebf5-23da-4dd0-8eb1-88488c627452}</ProjectGuid>
     <RootNamespace>SequenceContainers</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>1.SequenceContainers</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
