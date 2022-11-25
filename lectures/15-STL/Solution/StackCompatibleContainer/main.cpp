@@ -1,6 +1,7 @@
 #include <iostream>
 #include <list>
 #include <stack>
+#include <forward_list>
 
 #include "kb_list.hpp"
 

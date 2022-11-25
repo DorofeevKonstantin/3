@@ -19,8 +19,8 @@ void fillMap(std::map<keyT, valueT, predT>& m)
 	m.insert(std::make_pair("b", point{ 20,5 }));
 }
 
-template <class keyT, class valueT, class predT>
-void outputMap(const std::map<keyT, valueT, predT>& m, const std::string& name = "Map")
+template <class keyT, class valueT, class predT, class allocT>
+void outputMap(const std::map<keyT, valueT, predT, allocT>& m, const std::string& name = "Map")
 {
 	std::cout << name << std::endl;
 	for (auto& p : m)
@@ -62,4 +62,5 @@ int main()
 	};
 	fillMap(m4);
 	outputMap(m4, "m4");
+	return 0;
 }

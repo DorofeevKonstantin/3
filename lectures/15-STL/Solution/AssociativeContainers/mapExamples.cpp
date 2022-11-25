@@ -12,7 +12,7 @@ void histogrammExample()
 		for (int j = 2; j < 9; ++j)
 		{
 			if (rand % j == 0)
-				histogramm[j]++;
+				histogramm[j]++; // ???
 			i++;
 		}		
 	}
@@ -36,7 +36,7 @@ void findInsertEraseExamples()
 {
 	setlocale(0, "Ru");
 	std::map<std::string, std::string> phones;
-	phones.insert(std::make_pair("Ivan", "89047843231"));
+	//phones.insert(std::make_pair("Ivan", "89047843231"));
 	std::ifstream in("input.txt");
 	std::pair<std::string, std::string> entry;
 	while (in >> entry.first >> entry.second)
@@ -106,7 +106,8 @@ void multimapExample()
 		//std::pair <std::multimap<char, int>::iterator, std::multimap<char, int>::iterator> ret;
 		auto ret = symbols.equal_range(ch);
 		std::cout << ch << " =>";
-		for (std::multimap<char, int>::iterator it = ret.first; it != ret.second; ++it)
+		for (std::multimap<char, int>::iterator it = ret.first; 
+			it != ret.second; ++it)
 			std::cout << ' ' << it->second;
 		std::cout << '\n';
 	}
@@ -121,7 +122,6 @@ void textAnalyze()
 	while (in >> str)
 	{
 		text[str]++;
-		//text.insert(pair<string,int>(str, 1));
 	}
 	for (auto& entry : text)
 	{

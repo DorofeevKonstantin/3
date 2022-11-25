@@ -38,7 +38,7 @@ int main()
 	for (int n : data)
 		q3.push(n);
 	print_queue(q3);
-
+	std::vector<bool> vb;
 	// Pseudo containers
 	// vector<bool>, bitset<size_t>, valarray
 

@@ -32,8 +32,6 @@ void IniParser::parseIniFile(const std::string& fileName)
 	std::cout << "Started value = " << startedValue << std::endl;
 	result = startedValue;
 	for (size_t i = 0; i < sequence.size(); ++i)
-	{
 		result = functionMap[sequence[i]](result);
-	}
 	std::cout << "Counted value = " << result << std::endl;
 }

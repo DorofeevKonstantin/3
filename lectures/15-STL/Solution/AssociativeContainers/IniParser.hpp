@@ -26,7 +26,6 @@ private:
 		std::cout << functionName << "==" << extractedString << std::endl;
 		sequence.push_back(extractedString);
 	}
-
 public:
 	IniParser()
 	{

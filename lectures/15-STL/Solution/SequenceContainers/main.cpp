@@ -29,7 +29,7 @@ struct MyArray
 // stack with N elements of type T
 // stack<vector>  || O*(1) || N*sizeof(T)*k
 // stack<deque>   || O(1)  || N*sizeof(T) + N/chunkSize*sizeof(void*)
-// stack<list>    || O(1)  || N*(sizeof(T)+2*sizeof(void*))
+// stack<list>    || O(1)  || N*(sizeof(T) + 2*sizeof(void*))
 
 // overloading? overriding?
 // replacement!

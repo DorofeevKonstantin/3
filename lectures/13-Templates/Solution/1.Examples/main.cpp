@@ -192,5 +192,6 @@ int main()
 
 	best_student2 = dataBase<std::string, std::string>::get_best_student();
 	std::cout << best_student2;
+	//isPointerTests();
 	return 0;
 }
