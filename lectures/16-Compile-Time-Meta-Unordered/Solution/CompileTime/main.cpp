@@ -15,6 +15,7 @@ int main()
 	std::cout << KB::fibonacci<5>::value << std::endl << std::endl;
 
 	std::cout << KB::to_string<15> << std::endl;
+	std::cout << KB::to_string<-7> << std::endl;
 	std::cout << itoax<15>::value << std::endl << std::endl;
 
 	std::cout << KB::to_string<35, 2> << std::endl;

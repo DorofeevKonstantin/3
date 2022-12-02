@@ -1,4 +1,6 @@
 #include <iostream>
+#include <list>
+#include <algorithm>
 
 int main()
 {
