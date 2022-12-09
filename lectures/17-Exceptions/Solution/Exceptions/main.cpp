@@ -108,11 +108,12 @@ void vectorSolutionExample()
 int main()
 {
 	srand((unsigned int)time(0));
+
 	// A. Smal presentation slides
 
-	// constructorProblem
+	//constructorProblem();
 
-	// destructorProblem	
+	//destructorProblem();
 
 	//handlingIOExceptions();
 

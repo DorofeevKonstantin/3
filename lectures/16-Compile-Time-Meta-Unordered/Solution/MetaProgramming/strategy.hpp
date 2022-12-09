@@ -47,9 +47,9 @@ public:
 	std::string algorithm(const std::vector<std::string>& data) const override
 	{
 		std::string result;
-		std::for_each(std::begin(data), std::end(data), [&result](const std::string& letter)
+		std::for_each(std::begin(data), std::end(data), [&result](const std::string& word)
 			{
-				result += letter;
+				result += word;
 			});
 		std::sort(std::begin(result), std::end(result));
 		return result;
@@ -61,9 +61,9 @@ public:
 	std::string algorithm(const std::vector<std::string>& data) const override
 	{
 		std::string result;
-		std::for_each(std::begin(data), std::end(data), [&result](const std::string& letter)
+		std::for_each(std::begin(data), std::end(data), [&result](const std::string& word)
 			{
-				result += letter;
+				result += word;
 			});
 		std::sort(std::begin(result), std::end(result), [](const char& lhs, const char& rhs)
 			{
