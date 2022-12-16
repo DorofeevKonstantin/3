@@ -7,8 +7,8 @@
 void matchExample()
 {
 	// Simple regular expression matching
-	const std::string fileNames[] = { "foo.txt", "bar.txt", "baz.dat", "zoidberg" };
-	const std::regex txtRegex("[a-z]+\\.txt");
+	const std::string fileNames[] = { "123abc.txt", "foo.txt", "bar.txt", "baz.dat", "zoidberg" };
+	const std::regex txtRegex(".*[a-z]+\\.txt");
 	std::cout << "txtRegex : " << std::endl;
 	for (const auto& fileName : fileNames)
 	{
@@ -17,7 +17,7 @@ void matchExample()
 	std::cout << std::endl;
 
 	// Extraction of a sub-match
-	const std::regex baseRegex("([a-z]+)\\.txt");
+	const std::regex baseRegex("(.*[a-z]+)\\.txt");
 	std::smatch baseMatch;
 	std::cout << "baseRegex : " << std::endl;
 	for (const auto& fileName : fileNames)

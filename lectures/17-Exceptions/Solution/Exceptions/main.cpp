@@ -121,7 +121,7 @@ int main()
 	//arraySolutionExample();
 
 	//vectorProblemExample();
-	//vectorSolutionExample();
+	vectorSolutionExample();
 
 	// guarantees
 
