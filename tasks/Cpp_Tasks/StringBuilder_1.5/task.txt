@@ -1,0 +1,16 @@
+Написать свой StringBuilder - класс для работы со строками с использованием массива символов (порождение новых строк только в методе toString).
+Интерфейс:
+StringBuilder()
+StringBuilder(String)
+append(char)
+append(char[])
+append(String)
+insert(char, int index)
+insert(char[], int index)
+insert(String, int index)
+delete(int from, int to)
+delete(String)
+String toString()
+int getLength()
+undo() - отменяет последнюю операцию, может быть вызван множество раз вплоть до исходного состояния объекта.
+redo() - отменяет эффект последнего undo(), может быть вызван только после undo(), но любое количество раз вплоть до состояния объекта до вызова первого undo().
